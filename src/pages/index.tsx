@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { CategoryCard, PostCard, PostWidget } from '@/components';
-import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
 /**
@@ -26,7 +25,7 @@ const posts = [
 
 export default function HomePage() {
   return (
-    <Layout>
+    <>
       <Seo templateTitle='Home' />
       <div className='grid grid-cols-1 gap-12 lg:grid-cols-12'>
         <div className='col-span-1 lg:col-span-8'>
@@ -41,6 +40,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

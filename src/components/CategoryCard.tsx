@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CategoryCard = () => {
-  return <div></div>;
+  return <div>CategoryCard</div>;
 };
 
 export default CategoryCard;
