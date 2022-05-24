@@ -27,7 +27,6 @@ const posts = [
 export default function HomePage() {
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
       <Seo templateTitle='Home' />
       <div className='grid grid-cols-1 gap-12 lg:grid-cols-12'>
         <div className='col-span-1 lg:col-span-8'>
