@@ -1,12 +1,18 @@
 import Link from 'next/link';
-import React from 'react';
-const categories = [
-  { name: 'react', slug: 'react' },
-  { name: 'angular', slug: 'angular' },
-  { name: 'vue', slug: 'vue' },
-];
+import React, { useEffect } from 'react';
+
+import { CategoryModel } from '@/components/CategoryCard';
+
+import { getCategories } from '@/services';
 
 const Header = () => {
+  const [categories, setCategories] = React.useState<CategoryModel[]>([]);
+
+  useEffect(() => {
+    getCategories().then((newCategories) => {
+      setCategories(newCategories);
+    });
+  }, []);
   return (
     <div className='container mx-auto mb-8 px-10'>
       <div className='inline-block w-full border-b border-blue-400 py-8'>
