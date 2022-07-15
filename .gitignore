@@ -39,3 +39,4 @@ sitemap.xml
 sitemap-*.xml
 
 .idea
+.vscode

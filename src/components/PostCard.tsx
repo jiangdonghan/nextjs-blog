@@ -2,6 +2,10 @@ import moment from 'moment';
 import Link from 'next/link';
 import React from 'react';
 
+interface RawArticleNode {
+  type: string;
+  children: { [p: string]: any }[];
+}
 export interface PostCardProps {
   title: string;
   excerpt: string;
@@ -13,7 +17,14 @@ export interface PostCardProps {
   author: {
     name: string;
     photo: { url: string };
+    bio: string;
   };
+  content?: {
+    raw: {
+      children: RawArticleNode[];
+    };
+  };
+  categories: { slug: string; name: string }[];
 }
 
 const PostCard: React.FC<PostCardProps> = ({

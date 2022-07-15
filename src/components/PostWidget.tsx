@@ -15,7 +15,7 @@ const PostWidget: React.FC<PostWidgetProps> = ({ categories, slug }) => {
 
   useEffect(() => {
     if (slug) {
-      getSimilarPosts().then((posts) => {
+      getSimilarPosts(slug, categories || []).then((posts) => {
         setRelatedPosts(posts);
       });
     } else {
