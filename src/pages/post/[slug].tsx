@@ -1,7 +1,13 @@
 import { GetStaticPaths } from 'next';
 import React from 'react';
 
-import { Author, CategoryCard, PostDetail, PostWidget } from '@/components';
+import {
+  Author,
+  CategoryCard,
+  CommentForm,
+  PostDetail,
+  PostWidget,
+} from '@/components';
 import { PostCardProps } from '@/components/PostCard';
 
 import { getPostDetails, getPosts } from '@/services';
@@ -13,7 +19,7 @@ const PostDetails = ({ post }: { post: PostCardProps }) => {
         <div className='col-span-1 lg:col-span-8'>
           <PostDetail {...post} />
           <Author author={post.author} />
-          {/*<CommentForm slug={post.slug}/>*/}
+          <CommentForm slug={post.slug} />
           {/*<Comments slug={post.slug}/>*/}
         </div>
         <div className='col-span-1 lg:col-span-4'>
