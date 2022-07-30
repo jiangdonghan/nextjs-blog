@@ -30,7 +30,7 @@ const PostWidget: React.FC<PostWidgetProps> = ({ categories, slug }) => {
         {slug ? 'Related Posts' : 'Recent Posts'}
       </h3>
       {relatedPosts.map((post) => (
-        <div className='flex w-full items-center' key={post.title}>
+        <div className='mb-2 flex w-full items-center' key={post.title}>
           <div className='w-16 flex-none'>
             <img
               alt={post.title}
