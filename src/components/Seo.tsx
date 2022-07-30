@@ -8,7 +8,7 @@ const defaultMeta = {
   title: `Donghan's Blog`,
   siteName: `Donghan's Blog`,
   description: 'Personal Blog',
-  url: 'https://tsnext-tw.thcl.dev',
+  url: 'https://nextjs-blog-two-iota-56.vercel.app/',
   type: 'website',
   robots: 'follow, index',
   /** No need to be filled, will be populated with openGraph function */
@@ -65,11 +65,7 @@ export default function Seo(props: SeoProps) {
             property='og:publish_date'
             content={meta.date}
           />
-          <meta
-            name='author'
-            property='article:author'
-            content='Theodorus Clarence'
-          />
+          <meta name='author' property='article:author' content='Donghan' />
         </>
       )}
 
@@ -99,71 +95,71 @@ const favicons: Array<Favicons> = [
   {
     rel: 'apple-touch-icon',
     sizes: '57x57',
-    href: '/favicon/apple-icon-57x57.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '60x60',
-    href: '/favicon/apple-icon-60x60.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '72x72',
-    href: '/favicon/apple-icon-72x72.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '76x76',
-    href: '/favicon/apple-icon-76x76.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '114x114',
-    href: '/favicon/apple-icon-114x114.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '120x120',
-    href: '/favicon/apple-icon-120x120.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '144x144',
-    href: '/favicon/apple-icon-144x144.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '152x152',
-    href: '/favicon/apple-icon-152x152.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'apple-touch-icon',
     sizes: '180x180',
-    href: '/favicon/apple-icon-180x180.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '192x192',
-    href: '/favicon/android-icon-192x192.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '32x32',
-    href: '/favicon/favicon-32x32.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '96x96',
-    href: '/favicon/favicon-96x96.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'icon',
     type: 'image/png',
     sizes: '16x16',
-    href: '/favicon/favicon-16x16.png',
+    href: '/favicon/favicon-panda.ico',
   },
   {
     rel: 'manifest',
