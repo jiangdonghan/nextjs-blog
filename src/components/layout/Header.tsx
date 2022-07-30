@@ -1,37 +1,28 @@
 import Link from 'next/link';
-import React, { useEffect } from 'react';
-
-import { CategoryModel } from '@/components/CategoryCard';
-
-import { getCategories } from '@/services';
+import React from 'react';
 
 const Header = () => {
-  const [categories, setCategories] = React.useState<CategoryModel[]>([]);
+  const pages = [
+    { name: 'Contact', path: '/contact' },
+    { name: 'Portfolio', path: '/portfolio' },
+    { name: 'Blog', path: '/blog' },
+  ];
 
-  useEffect(() => {
-    getCategories().then((newCategories) => {
-      setCategories(newCategories);
-    });
-  }, []);
   return (
-    <div className='container mx-auto mb-8 px-10'>
-      <div className='inline-block w-full border-b border-blue-400 py-8'>
+    <div className='container mx-auto mb-2 px-28'>
+      <div className='inline-block w-full  py-8'>
         <div className='block md:float-left'>
           <Link href='/' passHref>
-            <span className='cursor-pointer text-4xl font-bold text-white'>
-              Donghan&apos;s Blog
+            <span className='link link-underline link-underline-black cursor-pointer text-4xl font-bold text-white'>
+              Home
             </span>
           </Link>
         </div>
         <div className='hidden md:float-left md:contents'>
-          {categories.map((category) => (
-            <Link
-              href={`/category/${category.slug}`}
-              key={category.slug}
-              passHref
-            >
-              <span className='mt-2 ml-4 cursor-pointer align-middle font-bold font-semibold text-white md:float-right'>
-                {category.name}
+          {pages.map((page) => (
+            <Link href={page.path} key={page.path} passHref>
+              <span className='link link-underline link-underline-black mt-2 ml-8 cursor-pointer align-middle text-2xl font-bold font-semibold text-white md:float-right'>
+                {page.name}
               </span>
             </Link>
           ))}

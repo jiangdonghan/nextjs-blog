@@ -1,10 +1,6 @@
 import * as React from 'react';
 
-import { CategoryCard, PostCard, PostWidget } from '@/components';
-import { PostCardProps } from '@/components/PostCard';
 import Seo from '@/components/Seo';
-
-import { getPosts } from '@/services';
 
 /**
  * SVGR Support
@@ -18,43 +14,12 @@ import { getPosts } from '@/services';
 // Before you begin editing, follow all comments with `STARTERCONF`,
 // to customize the default configuration.
 
-interface Props {
-  posts: {
-    node: PostCardProps;
-  }[];
-}
-export default function HomePage({ posts }: Props) {
+export default function HomePage() {
   return (
     <>
       <Seo templateTitle='Home' />
-      <div className='grid grid-cols-1 gap-12 lg:grid-cols-12'>
-        <div className='col-span-1 lg:col-span-8'>
-          {posts.map((post) => (
-            <PostCard {...post.node} key={post.node.title} />
-          ))}
-        </div>
-        <div className='col-span-1 lg:col-span-4'>
-          <div className='relative top-8 lg:sticky'>
-            <PostWidget />
-            <CategoryCard />
-          </div>
-        </div>
-      </div>
+
+      <div>Home Page</div>
     </>
   );
-}
-
-export async function getStaticProps() {
-  let posts = [];
-  try {
-    posts = (await getPosts()) || [];
-  } catch {
-    //todo error catch
-  }
-
-  return {
-    props: {
-      posts,
-    },
-  };
 }
