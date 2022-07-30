@@ -3,7 +3,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-import { PostCardProps } from '@/components/PostCard';
+import { PostCardProps } from '@/components/blog/PostCard';
 
 const PostDetail: React.FC<PostCardProps> = (post: PostCardProps) => {
   const getContentFragment = (

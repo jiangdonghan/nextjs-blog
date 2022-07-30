@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { PostCardProps } from '@/components/PostCard';
+import { PostCardProps } from '@/components/blog/PostCard';
 
 const Author: React.FC<Pick<PostCardProps, 'author'>> = ({ author }) => {
   return (

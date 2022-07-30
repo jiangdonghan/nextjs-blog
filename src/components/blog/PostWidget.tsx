@@ -2,7 +2,7 @@ import moment from 'moment';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
-import { PostCardProps } from '@/components/PostCard';
+import { PostCardProps } from '@/components/blog/PostCard';
 
 import { getRecentPosts, getSimilarPosts } from '@/services';
 
