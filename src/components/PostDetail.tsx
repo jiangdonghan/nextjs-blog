@@ -79,7 +79,7 @@ const PostDetail: React.FC<PostCardProps> = (post: PostCardProps) => {
       </div>
       <div className='px-4 lg:px-0'>
         <div className='mb-8 flex w-full items-center'>
-          <div className='mb-4 mr-8 flex w-full items-center justify-center lg:mb-0 lg:w-auto'>
+          <div className=' mr-8 ml-4 flex items-center justify-center  lg:mb-0 lg:w-auto'>
             <img
               alt={post.author.name}
               height='30px'
@@ -91,7 +91,7 @@ const PostDetail: React.FC<PostCardProps> = (post: PostCardProps) => {
               {post.author.name}
             </p>
           </div>
-          <div className='font-medium text-gray-700'>
+          <div className='w-full font-medium text-gray-700'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='mr-2 inline h-6 w-6 text-pink-500'
