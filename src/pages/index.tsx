@@ -38,10 +38,10 @@ export default function HomePage() {
           href='https://linkedin.com/in/donghan-jimmy-jiang-675962104'
           passHref
         >
-          <LinkedInLogo className='h-8 w-8 rounded-full' />
+          <LinkedInLogo className='h-8 w-8 cursor-pointer rounded-full' />
         </Link>
         <Link href='https://github.com/jiangdonghan' passHref>
-          <GithubLogo className='h-8 w-8 rounded-full' />
+          <GithubLogo className='h-8 w-8 cursor-pointer rounded-full' />
         </Link>
       </div>
     </>
