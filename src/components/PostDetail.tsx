@@ -1,5 +1,7 @@
 import moment from 'moment';
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 import { PostCardProps } from '@/components/PostCard';
 
@@ -110,13 +112,29 @@ const PostDetail: React.FC<PostCardProps> = (post: PostCardProps) => {
           </div>
         </div>
         <h1 className='mb-8 text-3xl font-semibold '>{post.title}</h1>
-        {((post.content?.raw && post.content.raw.children) || []).map(
-          (typeoObj, index) => {
-            const children = typeoObj.children.map((item, index) =>
-              getContentFragment(index, item.text, item)
-            );
-            return getContentFragment(index, children, typeoObj, typeoObj.type);
-          }
+        {!post.useMarkdown ? (
+          ((post.content?.raw && post.content.raw.children) || []).map(
+            (typeoObj, index) => {
+              const children = typeoObj.children.map((item, index) =>
+                getContentFragment(index, item.text, item)
+              );
+              return getContentFragment(
+                index,
+                children,
+                typeoObj,
+                typeoObj.type
+              );
+            }
+          )
+        ) : (
+          <article className='prose-a:text-blue-600" prose prose-slate prose-headings:underline prose-img:rounded-xl'>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className='markdown-wrapper'
+            >
+              {post.contentMarkdown || ''}
+            </ReactMarkdown>
+          </article>
         )}
       </div>
     </div>

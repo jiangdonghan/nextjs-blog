@@ -7,6 +7,7 @@ interface RawArticleNode {
   children: { [p: string]: any }[];
 }
 export interface PostCardProps {
+  useMarkdown: boolean;
   title: string;
   excerpt: string;
   slug: string;
@@ -24,6 +25,7 @@ export interface PostCardProps {
       children: RawArticleNode[];
     };
   };
+  contentMarkdown?: string;
   categories: { slug: string; name: string }[];
 }
 
