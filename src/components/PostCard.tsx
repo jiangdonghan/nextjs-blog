@@ -54,7 +54,7 @@ const PostCard: React.FC<PostCardProps> = ({
             height='30px'
             width='30px'
             className='rounded-full align-middle'
-            src={author.photo.url}
+            src={author.photo && author.photo.url}
           />
           <p className='ml-2 inline align-middle text-lg text-gray-700'>
             {author.name}

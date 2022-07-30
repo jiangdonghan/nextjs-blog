@@ -13,7 +13,7 @@ const Author: React.FC<Pick<PostCardProps, 'author'>> = ({ author }) => {
           height='100px'
           width='100px'
           className='rounded-full align-middle'
-          src={author.photo.url}
+          src={author.photo && author.photo.url}
         />
       </div>
       <h3 className='my-4 text-xl font-bold text-white'>{author.name}</h3>
