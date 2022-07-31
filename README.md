@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🔋 Next.js Headless Graphql Blog</h1>
+  <h1>🔋 Next.js Headless Graphql Blog with Portfolio</h1>
   <p>Next.js + Tailwind CSS + TypeScript + GraphQL + GraphCms</p>
 </div>
 
