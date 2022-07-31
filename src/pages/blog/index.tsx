@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { CategoryCard, PostCard, PostWidget } from '@/components';
-import { PostCardProps } from '@/components/PostCard';
+import { PostCardProps } from '@/components/blog/PostCard';
 
 import { getPosts } from '@/services';
 

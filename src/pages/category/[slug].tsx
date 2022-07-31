@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import Loader from '@/components/Loader';
-import { PostCardProps } from '@/components/PostCard';
+import Loader from '@/components/blog/Loader';
+import { PostCardProps } from '@/components/blog/PostCard';
 
 import { getCategories, getCategoryPost } from '@/services';
 

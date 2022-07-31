@@ -10,8 +10,8 @@ import {
   PostDetail,
   PostWidget,
 } from '@/components';
-import Loader from '@/components/Loader';
-import { PostCardProps } from '@/components/PostCard';
+import Loader from '@/components/blog/Loader';
+import { PostCardProps } from '@/components/blog/PostCard';
 
 import { getPostDetails, getPosts } from '@/services';
 

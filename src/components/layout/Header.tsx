@@ -3,7 +3,6 @@ import React from 'react';
 
 const Header = () => {
   const pages = [
-    { name: 'Contact', path: '/contact' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Blog', path: '/blog' },
   ];
