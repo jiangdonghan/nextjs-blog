@@ -24,11 +24,12 @@ const PortfolioPage = () => {
           </p>
           <p className='mb-4'>
             I previously worked at Agora.io for two years as a full stack
-            developer, where I led the enterprise management system and ticket
-            system. Apart from that, i also contributed to dev community website
-            and agora cn official website. Agora is the leading video, voice and
-            live interactive streaming platform in the world, helping developers
-            deliver rich in-app experiences.
+            developer, where I participated in the customer management system
+            and billing system. Apart from that, i also contributed to dev
+            community website , agora cn official website and ticket system.
+            Agora is the leading video, voice and live interactive streaming
+            platform in the world, helping developers deliver rich in-app
+            experiences.
           </p>
           <p className='mb-4'>
             I would love to find a job in New Zealand and make New Zealand a
