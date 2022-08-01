@@ -10,11 +10,15 @@ export const PortfolioData = {
   about: {
     title: 'My Background',
     description: [
-      'Hi, I’m Donghan(Jimmy) Jiang and I graduated from Queensland University of Technology in 2021 with a master degree in Computer Science.',
-      'My interests are in website development, and I love to create beautiful and performant products with delightful user experiences and i have solid skills for web development, such as CSS, JavaScript, TypeScript, React and Vue.js.',
-      'I previously worked at Agora.io for two years as a full stack developer, where I led the enterprise management system and ticket system. Apart from that, i also contributed to dev community website and agora cn official website. Agora is the leading video, voice and live interactive streaming platform in the world, helping developers deliver rich in-app experiences.',
-      'I built and maintain these projects with one other engineer over the period of two years. The enterprise management system is on a TypeScript, Vue/Vuex and Node.js stack. The ticket system is on a TypeScript, React/Redux and Node.js stack. The database for all the projects is MySQL.',
-      'I would love to find a job in New Zealand and make New Zealand a permanent home for me.',
+      'A self-motivated and passionate Full Stack developer',
+      'Fast-learning ability',
+      'Capable of writing readable, reusable, and maintainable code',
+      'Practiced Agile (Scrum/XP) and familiar with SDLC',
+      'With expertise in the front end (skilled in React, Vue.js, CSS, TypeScript)',
+      'Experience with back end development (Node.Js, Ruby On Rails, MySQL, MongoDB, RESTful, GraphQL)',
+      'Experience with front end application bundles (Webpack, Vite)',
+      'Experience with CI/CD (Jenkins, Github Action)\n',
+      'Hands-on experience on development and deployment projects on Amazon AWS',
     ],
   },
   skills: [
