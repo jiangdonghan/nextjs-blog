@@ -6,7 +6,7 @@ const ProjectCard: React.FC<{
   project: { title: string; description: string; tags: string[]; link: string };
 }> = ({ project: { title, description, tags, link } }) => {
   return (
-    <div className='group m-4 mx-auto w-full rounded-xl border-2 border-gray-300 bg-white p-6 sm:w-1/2'>
+    <div className='group m-4 mx-auto w-full rounded-xl border-2 border-gray-300 bg-white p-6 sm:w-2/3'>
       <a href={link}>
         <h1 className='text-center text-xl font-bold'>
           {title} <FaExternalLinkAlt className='inline align-baseline' />

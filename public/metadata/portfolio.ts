@@ -73,5 +73,11 @@ export const PortfolioData = {
       tags: ['Vue', 'Vuex'],
       link: 'https://github.com/jiangdonghan/travelsite',
     },
+    {
+      title: 'TS Data Structures',
+      description: '👨‍ Data Structures Implemented By TypeScript',
+      tags: ['TypeScript', 'Data Structure'],
+      link: 'https://github.com/jiangdonghan/ts-data-structures',
+    },
   ],
 };

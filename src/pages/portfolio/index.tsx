@@ -11,7 +11,7 @@ const PortfolioPage = () => {
         About Me
       </h2>
       <div className='mx-auto mt-12 max-w-4xl'>
-        <div className='text-left text-base leading-relaxed text-gray-50 md:text-center'>
+        <div className='text-center text-base leading-relaxed text-gray-50'>
           <p className='mb-4'>
             Hi, I’m Donghan(Jimmy) Jiang and I graduated from Queensland
             University of Technology with a master degree in Computer Science.
@@ -39,7 +39,7 @@ const PortfolioPage = () => {
         <h2 className='mt-8 mb-8 text-center text-2xl font-extrabold md:text-4xl'>
           Skills
         </h2>
-        <div className='text-left text-base leading-relaxed text-yellow-100 md:text-center'>
+        <div className='text-center text-base leading-relaxed text-yellow-100'>
           {PortfolioData.about.description.map((item, index) => {
             return (
               <p key={index} className='mb-4'>
@@ -51,7 +51,7 @@ const PortfolioPage = () => {
         <h2 className='mt-8 mb-8 text-center text-2xl font-extrabold md:text-4xl'>
           My projects
         </h2>
-        <div>
+        <div className=''>
           {PortfolioData.projects.map((project) => ProjectCard({ project }))}
         </div>
       </div>
