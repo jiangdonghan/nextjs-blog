@@ -1,8 +1,17 @@
 import { gql, request } from 'graphql-request';
+import {ApolloClient, InMemoryCache,gql as apolloGql} from "@apollo/client";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || '';
+
+
+const client = new ApolloClient({
+  uri: graphqlAPI,
+  cache: new InMemoryCache(),
+});
+
+
 export const getPosts = async () => {
-  const query = gql`
+  const query = apolloGql`
     query MyQuery {
       postsConnection {
         edges {
@@ -31,8 +40,9 @@ export const getPosts = async () => {
       }
     }
   `;
-  const res = await request(graphqlAPI, query);
-  return res.postsConnection.edges;
+  // const res = await request(graphqlAPI, query);
+  const res = await client.query({query})
+  return res.data.postsConnection.edges;
 };
 
 export const getRecentPosts = async () => {

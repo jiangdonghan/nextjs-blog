@@ -20,6 +20,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "clsx": "^1.1.1",
     "graphql": "^16.5.0",
     "graphql-request": "^4.2.0",
