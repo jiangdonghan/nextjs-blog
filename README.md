@@ -48,3 +48,19 @@ Don't forget to change the package name in package.json
 ### 5. Commit Message Convention
 
 This project is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.
+
+
+## Development Roadmap
+
+### Code
+- [ ] Add type for GraphQL mutations
+- [ ] Upgrade to Next.js 13
+- [ ] Implement a loading UI
+### Blog
+- [ ] Add pagination for blog posts
+- [ ] Remove Image Banner from Blog Post
+- [ ] Enable Search for Blog Posts
+
+### Portfolio
+- [ ] Redesign Portfolio Page
+- [ ] Refactor Portfolio Page to use GraphQL
