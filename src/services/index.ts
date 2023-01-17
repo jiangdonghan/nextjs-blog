@@ -1,14 +1,11 @@
-import { gql, request } from 'graphql-request';
-import {ApolloClient, InMemoryCache,gql as apolloGql} from "@apollo/client";
+import { ApolloClient, gql as apolloGql, InMemoryCache } from '@apollo/client';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || '';
-
 
 const client = new ApolloClient({
   uri: graphqlAPI,
   cache: new InMemoryCache(),
 });
-
 
 export const getPosts = async () => {
   const query = apolloGql`
@@ -41,12 +38,12 @@ export const getPosts = async () => {
     }
   `;
   // const res = await request(graphqlAPI, query);
-  const res = await client.query({query})
+  const res = await client.query({ query });
   return res.data.postsConnection.edges;
 };
 
 export const getRecentPosts = async () => {
-  const query = gql`
+  const query = apolloGql`
     query GetPostDetails {
       posts(orderBy: createdAt_ASC, last: 3) {
         title
@@ -58,12 +55,12 @@ export const getRecentPosts = async () => {
       }
     }
   `;
-  const res = await request(graphqlAPI, query);
-  return res.posts;
+  const res = await client.query({ query });
+  return res.data.posts;
 };
 
 export const getSimilarPosts = async (slug?: string, category?: string[]) => {
-  const query = gql`
+  const query = apolloGql`
     query GetPostDetails($slug: String!, $category: [String!]) {
       posts(
         where: {
@@ -81,12 +78,14 @@ export const getSimilarPosts = async (slug?: string, category?: string[]) => {
       }
     }
   `;
-  const res = await request(graphqlAPI, query, { slug, category });
-  return res.posts;
+  const res = await client.query({ query, variables: { slug, category } });
+
+  // const res = await request(graphqlAPI, query, { slug, category });
+  return res.data.posts;
 };
 
 export const getCategories = async () => {
-  const query = gql`
+  const query = apolloGql`
     query GetCategories {
       categories {
         name
@@ -94,12 +93,12 @@ export const getCategories = async () => {
       }
     }
   `;
-  const res = await request(graphqlAPI, query);
-  return res.categories;
+  const res = await client.query({ query });
+  return res.data.categories;
 };
 
 export const getPostDetails = async (slug: string) => {
-  const query = gql`
+  const query = apolloGql`
     query GetPostDetails($slug: String!) {
       post(where: { slug: $slug }) {
         createdAt
@@ -129,8 +128,8 @@ export const getPostDetails = async (slug: string) => {
       }
     }
   `;
-  const res = await request(graphqlAPI, query, { slug });
-  return res.post;
+  const res = await client.query({ query, variables: { slug } });
+  return res.data.post;
 };
 
 export const submitComment = async (obj: any) => {
@@ -146,7 +145,7 @@ export const submitComment = async (obj: any) => {
 };
 
 export const getComments = async (slug: string) => {
-  const query = gql`
+  const query = apolloGql`
     query GetComments($slug: String!) {
       comments(where: { post: { slug: $slug } }) {
         name
@@ -155,12 +154,12 @@ export const getComments = async (slug: string) => {
       }
     }
   `;
-  const res = await request(graphqlAPI, query, { slug });
-  return res.comments;
+  const res = await client.query({ query, variables: { slug } });
+  return res.data.comments;
 };
 
 export const getCategoryPost = async (slug: string) => {
-  const query = gql`
+  const query = apolloGql`
     query GetCategoryPost($slug: String!) {
       postsConnection(where: { categories_some: { slug: $slug } }) {
         edges {
@@ -191,7 +190,6 @@ export const getCategoryPost = async (slug: string) => {
     }
   `;
 
-  const result = await request(graphqlAPI, query, { slug });
-
-  return result.postsConnection.edges;
+  const res = await client.query({ query, variables: { slug } });
+  return res.data.postsConnection.edges;
 };
