@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🔋 Next.js Headless Graphql Blog with Portfolio</h1>
+  <h1>🔋 Next.js SSG Headless Graphql Blog with Portfolio</h1>
   <p>Next.js + Tailwind CSS + TypeScript + GraphQL + Apollo + GraphCMS</p>
 </div>
 
@@ -53,7 +53,7 @@ This project is using [conventional commits](https://www.conventionalcommits.org
 ## Development Roadmap
 
 ### Code
-- [ ] Use apollo client to fetch data
+- [x] Use apollo client to fetch data
 - [ ] Add type for GraphQL mutations
 - [ ] Add type for GraphQL mutations
 - [ ] Upgrade to Next.js 13

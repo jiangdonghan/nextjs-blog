@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const graphCmsToken = process.env.GRAPH_CMS_TOKEN;
 
-import { ApolloClient, gql as apolloGql, InMemoryCache } from '@apollo/client';
+import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || '';
 
@@ -29,7 +29,7 @@ export default async function comments(
   const { name, email, comment, slug } = body;
 
   // mutation in graphql means add some new data
-  const query = apolloGql`
+  const query = gql`
     mutation CreateComment(
       $name: String!
       $email: String!

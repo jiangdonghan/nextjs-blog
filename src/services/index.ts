@@ -1,4 +1,4 @@
-import { ApolloClient, gql as apolloGql, InMemoryCache } from '@apollo/client';
+import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || '';
 
@@ -8,7 +8,7 @@ const client = new ApolloClient({
 });
 
 export const getPosts = async () => {
-  const query = apolloGql`
+  const query = gql`
     query MyQuery {
       postsConnection {
         edges {
@@ -43,7 +43,7 @@ export const getPosts = async () => {
 };
 
 export const getRecentPosts = async () => {
-  const query = apolloGql`
+  const query = gql`
     query GetPostDetails {
       posts(orderBy: createdAt_ASC, last: 3) {
         title
@@ -60,7 +60,7 @@ export const getRecentPosts = async () => {
 };
 
 export const getSimilarPosts = async (slug?: string, category?: string[]) => {
-  const query = apolloGql`
+  const query = gql`
     query GetPostDetails($slug: String!, $category: [String!]) {
       posts(
         where: {
@@ -85,7 +85,7 @@ export const getSimilarPosts = async (slug?: string, category?: string[]) => {
 };
 
 export const getCategories = async () => {
-  const query = apolloGql`
+  const query = gql`
     query GetCategories {
       categories {
         name
@@ -98,7 +98,7 @@ export const getCategories = async () => {
 };
 
 export const getPostDetails = async (slug: string) => {
-  const query = apolloGql`
+  const query = gql`
     query GetPostDetails($slug: String!) {
       post(where: { slug: $slug }) {
         createdAt
@@ -145,7 +145,7 @@ export const submitComment = async (obj: any) => {
 };
 
 export const getComments = async (slug: string) => {
-  const query = apolloGql`
+  const query = gql`
     query GetComments($slug: String!) {
       comments(where: { post: { slug: $slug } }) {
         name
@@ -159,7 +159,7 @@ export const getComments = async (slug: string) => {
 };
 
 export const getCategoryPost = async (slug: string) => {
-  const query = apolloGql`
+  const query = gql`
     query GetCategoryPost($slug: String!) {
       postsConnection(where: { categories_some: { slug: $slug } }) {
         edges {
