@@ -1,10 +1,20 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import { gql, GraphQLClient } from 'graphql-request';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const graphqlApi = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || '';
 const graphCmsToken = process.env.GRAPH_CMS_TOKEN;
+
+import { ApolloClient, gql as apolloGql, InMemoryCache } from '@apollo/client';
+
+const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || '';
+
+const apolloClient = new ApolloClient({
+  uri: graphqlAPI,
+  cache: new InMemoryCache(),
+  headers: {
+    authorization: `Bearer ${graphCmsToken}`,
+  },
+});
 
 export default async function comments(
   req: NextApiRequest,
@@ -17,14 +27,9 @@ export default async function comments(
     slug: string;
   };
   const { name, email, comment, slug } = body;
-  const graphqlClient = new GraphQLClient(graphqlApi, {
-    headers: {
-      authorization: `Bearer ${graphCmsToken}`,
-    },
-  });
 
   // mutation in graphql means add some new data
-  const query = gql`
+  const query = apolloGql`
     mutation CreateComment(
       $name: String!
       $email: String!
@@ -45,11 +50,14 @@ export default async function comments(
   `;
 
   try {
-    const result = await graphqlClient.request(query, {
-      name,
-      email,
-      comment,
-      slug,
+    const result = await apolloClient.mutate({
+      variables: {
+        name,
+        email,
+        comment,
+        slug,
+      },
+      mutation: query,
     });
     return res.status(200).json(result);
   } catch (err) {
