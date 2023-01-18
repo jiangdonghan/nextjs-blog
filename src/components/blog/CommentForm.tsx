@@ -34,8 +34,8 @@ const CommentForm: React.FC<{ slug: string }> = ({ slug }) => {
       window.localStorage.setItem('name', name);
       window.localStorage.setItem('email', email);
     } else {
-      window.localStorage.remove('name', name);
-      window.localStorage.remove('email', email);
+      window.localStorage.removeItem('name');
+      window.localStorage.removeItem('email');
     }
 
     submitComment(commentObj).then(() => {
