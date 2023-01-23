@@ -13,7 +13,7 @@ import {
 import Loader from '@/components/blog/Loader';
 import { PostCardProps } from '@/components/blog/PostCard';
 
-import { getPostDetails, getPosts } from '@/services';
+import { getPostDetails, getPosts } from '@/services/requests';
 
 const PostDetails = ({ post }: { post: PostCardProps }) => {
   const router = useRouter();

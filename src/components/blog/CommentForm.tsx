@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { submitComment } from '@/services';
+import { submitComment } from '@/services/requests';
 
 const CommentForm: React.FC<{ slug: string }> = ({ slug }) => {
   const [error, setError] = useState<boolean>(false);

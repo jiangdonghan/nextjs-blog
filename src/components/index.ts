@@ -5,3 +5,4 @@ export { default as Comments } from './blog/Comments';
 export { default as PostCard } from './blog/PostCard';
 export { default as PostDetail } from './blog/PostDetail';
 export { default as PostWidget } from './blog/PostWidget';
+export { default as ErrorView } from './Error';

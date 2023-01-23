@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 
-import { getCategories } from '@/services';
+import { getCategories } from '@/services/requests';
 
 export interface CategoryModel {
   name: string;

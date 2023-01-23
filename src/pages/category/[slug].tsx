@@ -4,7 +4,7 @@ import React from 'react';
 import Loader from '@/components/blog/Loader';
 import { PostCardProps } from '@/components/blog/PostCard';
 
-import { getCategories, getCategoryPost } from '@/services';
+import { getCategories, getCategoryPost } from '@/services/requests';
 
 import { CategoryCard, PostCard } from '../../components';
 

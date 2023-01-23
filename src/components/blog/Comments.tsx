@@ -2,7 +2,7 @@ import parse from 'html-react-parser';
 import moment from 'moment';
 import React, { useEffect } from 'react';
 
-import { getComments } from '@/services';
+import { getComments } from '@/services/requests';
 const Comments: React.FC<{ slug: string }> = ({ slug }) => {
   const [comments, setComments] = React.useState<any[]>([]);
 

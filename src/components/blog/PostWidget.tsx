@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import { PostCardProps } from '@/components/blog/PostCard';
 
-import { getRecentPosts, getSimilarPosts } from '@/services';
+import { getRecentPosts, getSimilarPosts } from '@/services/requests';
 
 interface PostWidgetProps {
   categories?: string[];
