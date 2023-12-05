@@ -39,13 +39,6 @@ const PostCard: React.FC<PostCardProps> = ({
 }) => {
   return (
     <div className='mb-8 rounded-lg bg-white p-0 pb-12 shadow-lg lg:p-8'>
-      <div className='relative mb-6 overflow-hidden pb-80 shadow-md'>
-        <img
-          src={featuredImage.url}
-          alt={title}
-          className='absolute h-80 w-full rounded rounded-t-lg object-cover object-top shadow-lg lg:rounded-lg'
-        />
-      </div>
       <h1 className='mb-8 cursor-pointer text-center text-3xl font-semibold transition duration-700 hover:text-pink-600'>
         <Link href={`/post/${slug}`}>{title}</Link>
       </h1>
