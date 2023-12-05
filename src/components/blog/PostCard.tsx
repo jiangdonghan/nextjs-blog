@@ -33,7 +33,6 @@ const PostCard: React.FC<PostCardProps> = ({
   title,
   excerpt,
   slug,
-  featuredImage,
   author,
   createdAt,
 }) => {
